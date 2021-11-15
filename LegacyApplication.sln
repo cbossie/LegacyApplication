@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "git", "git", "{3D7D5A06-4845-44AA-A52D-FECCEF08990F}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		deploy.bat = deploy.bat
 	EndProjectSection
 EndProject
 Global
