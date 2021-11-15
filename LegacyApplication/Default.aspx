@@ -6,7 +6,7 @@
     </h2>
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-10">
             <p>
                 The server you are on is <%= Environment.MachineName %>.
             </p>
