@@ -53,7 +53,7 @@ namespace LegacyApplication
 
             if(sessionData != null)
             {
-                lblSessionValue.Text = $"Session Value is \"{sessionData}\"";
+                lblSessionValue.Text = $"Session Value is <strong>{sessionData}</strong>.";
             }
             else
             {

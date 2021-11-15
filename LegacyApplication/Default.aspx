@@ -8,13 +8,13 @@
     <div class="row">
         <div class="col-md-10">
             <p>
-                The server you are on is <%= Environment.MachineName %>.
+                The server you are on is <strong><%= Environment.MachineName %></strong>.
             </p>
             <p>
-                The Session State mode we are using is "<asp:Label onload="lblSessionState_Load" runat="server" id="lblSessionState">".</asp:Label>
+                The Session State mode we are using is <strong><asp:Label onload="lblSessionState_Load" runat="server" id="lblSessionState"></asp:Label></strong>.
             </p>
             <p>
-                The Session ID you are using is "<asp:Label runat="server" ID="lblId" OnLoad="lblId_Load">".</asp:Label>
+                The Session ID you are using is <strong><asp:Label runat="server" ID="lblId" OnLoad="lblId_Load"></asp:Label>.</strong>
             </p>
             <p>
                 <asp:Label runat="server" id="lblSessionValue" OnPreRender="lblSessionValue_PreRender"  ></asp:Label>
