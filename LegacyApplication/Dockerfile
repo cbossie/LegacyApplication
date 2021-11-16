@@ -12,8 +12,11 @@ COPY /LogMonitor/LogMonitor.exe /LogMonitor/LogMonitorConfig.json ./
 WORKDIR /inetpub/wwwroot
 COPY ${source:-obj/Docker/publish} .
 
-ENTRYPOINT  C:\LogMonitor\LogMonitor.exe C:\ServiceMonitor.exe w3svc
+#ENTRYPOINT  C:\LogMonitor\LogMonitor.exe C:\ServiceMonitor.exe w3svc
 
-
-
+# Start IIS Remote Management and monitor IIS
+#SHELL ["C:\\LogMonitor\\LogMonitor.exe", "powershell.exe"]
+#ENTRYPOINT      C:\ServiceMonitor.exe w3svc
+#SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+#ENTRYPOINT ["C:\\LogMonitor\\LogMonitor.exe", "C:\\ServiceMonitor.exe", "w3svc"]
 
