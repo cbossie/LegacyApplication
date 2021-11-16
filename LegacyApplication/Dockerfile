@@ -3,5 +3,17 @@
 
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
 ARG source
+
+
+
+WORKDIR /LogMonitor
+COPY /LogMonitor/LogMonitor.exe /LogMonitor/LogMonitorConfig.json ./
+
 WORKDIR /inetpub/wwwroot
 COPY ${source:-obj/Docker/publish} .
+
+ENTRYPOINT  C:\LogMonitor\LogMonitor.exe C:\ServiceMonitor.exe w3svc
+
+
+
+

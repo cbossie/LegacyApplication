@@ -1,5 +1,5 @@
 
-aws ecr get-login-password --region us-east-1 --profile aws-cbbossie | docker login --username AWS --password-stdin 020698190649.dkr.ecr.us-east-1.amazonaws.com
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 020698190649.dkr.ecr.us-east-1.amazonaws.com
 
 
 docker build -t windows-fargate-legacy --build-arg source=. .\LegacyApplication
