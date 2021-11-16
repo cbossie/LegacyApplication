@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "git", "git", "{3D7D5A06-484
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		deploy.bat = deploy.bat
+		deploy_ec2.bat = deploy_ec2.bat
 		LegacyApplication\LogMonitor\LogMonitorConfig.json = LegacyApplication\LogMonitor\LogMonitorConfig.json
 	EndProjectSection
 EndProject

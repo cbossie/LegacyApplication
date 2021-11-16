@@ -4,19 +4,16 @@
 FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
 ARG source
 
-
-
-WORKDIR /LogMonitor
-COPY /LogMonitor/LogMonitor.exe /LogMonitor/LogMonitorConfig.json ./
+MAINTAINER Craig Bossie <cbbossie@amazon.com>
 
 WORKDIR /inetpub/wwwroot
 COPY ${source:-obj/Docker/publish} .
 
-#ENTRYPOINT  C:\LogMonitor\LogMonitor.exe C:\ServiceMonitor.exe w3svc
 
+# Log Monitor Data
+#WORKDIR /LogMonitor
+#COPY /LogMonitor/LogMonitor.exe /LogMonitor/LogMonitorConfig.json ./
 # Start IIS Remote Management and monitor IIS
-#SHELL ["C:\\LogMonitor\\LogMonitor.exe", "powershell.exe"]
-#ENTRYPOINT      C:\ServiceMonitor.exe w3svc
 #SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 #ENTRYPOINT ["C:\\LogMonitor\\LogMonitor.exe", "C:\\ServiceMonitor.exe", "w3svc"]
 
