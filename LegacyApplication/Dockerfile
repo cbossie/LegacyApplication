@@ -11,9 +11,9 @@ COPY ${source:-obj/Docker/publish} .
 
 
 # Log Monitor Data
-#WORKDIR /LogMonitor
-#COPY /LogMonitor/LogMonitor.exe /LogMonitor/LogMonitorConfig.json ./
+WORKDIR /LogMonitor
+COPY /LogMonitor/LogMonitor.exe /LogMonitor/LogMonitorConfig.json ./
 # Start IIS Remote Management and monitor IIS
-#SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
-#ENTRYPOINT ["C:\\LogMonitor\\LogMonitor.exe", "C:\\ServiceMonitor.exe", "w3svc"]
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+ENTRYPOINT ["C:\\LogMonitor\\LogMonitor.exe", "C:\\ServiceMonitor.exe", "w3svc"]
 

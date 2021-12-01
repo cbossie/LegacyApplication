@@ -36,6 +36,10 @@
     </div>
     <asp:Button runat="server" ID="btnSave" CssClass="btn btn-primary" Text="Save to Session" OnClick="btnSave_Click" />
 
+
+    <asp:Button runat="server" ID="btnDivideByZero" CssClass="btn btn-primary" Text="Divide By Zero" OnClick="btnDivideByZero_Click" />
+
+
     <div class="row col-md-12">
 
         <asp:Panel runat="server" CssClass="alert alert-alert-success"

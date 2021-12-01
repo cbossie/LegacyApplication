@@ -61,5 +61,11 @@ namespace LegacyApplication
             }
     
         }
+
+        protected void btnDivideByZero_Click(object sender, EventArgs e)
+        {
+            var a = 4;
+            var b = a / 0;
+        }
     }
 }
