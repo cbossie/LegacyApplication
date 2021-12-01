@@ -6,12 +6,12 @@ FROM mcr.microsoft.com/dotnet/framework/sdk:4.7.2-windowsservercore-ltsc2019 AS 
 WORKDIR /bld
 
 # Copy Source to Build Container
-COPY . ./LegacyApplication
+COPY . .
 
 
 WORKDIR /bld/LegacyApplication
 
-RUN msbuild c:\bld\LegacyApplication\LegacyApplication.csproj /t:Restore
+RUN msbuild c:\bld\LegacyApplication.sln /t:Restore
 
 # Execute Build
 RUN msbuild c:\bld\LegacyApplication\LegacyApplication.csproj /p:PublishProfile=FolderProfile-C /p:DeployOnBuild=true 
@@ -23,12 +23,15 @@ FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019
 WORKDIR /inetpub/wwwroot
 COPY --from=build /Publish-Legacy .
 
+# Create Virtual Directory and copy data
+RUN c:\Windows\system32\inetsrv\appcmd.exe add vdir /app.name:"Default Web Site/" /path:/Images /physicalPath:"C:\images"
+
 MAINTAINER Craig Bossie <cbbossie@amazon.com>
 
 
 # Log Monitor Data
 WORKDIR /LogMonitor
-COPY /LogMonitor/LogMonitor.exe /LogMonitor/LogMonitorConfig.json ./
+COPY /LegacyApplication/LogMonitor/LogMonitor.exe /LegacyApplication/LogMonitor/LogMonitorConfig.json ./
 # Start IIS Remote Management and monitor IIS
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 ENTRYPOINT ["C:\\LogMonitor\\LogMonitor.exe", "C:\\ServiceMonitor.exe", "w3svc"]

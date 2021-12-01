@@ -8,9 +8,17 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "git", "git", "{3D7D5A06-4845-44AA-A52D-FECCEF08990F}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		deploy-withvd.bat = deploy-withvd.bat
 		deploy.bat = deploy.bat
 		deploy_ec2.bat = deploy_ec2.bat
 		LegacyApplication\LogMonitor\LogMonitorConfig.json = LegacyApplication\LogMonitor\LogMonitorConfig.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{465F23E1-660A-44B2-AE62-C0083AA2336C}"
+	ProjectSection(SolutionItems) = preProject
+		deploy.bat = deploy.bat
+		deploy_ec2.bat = deploy_ec2.bat
+		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
 Global
