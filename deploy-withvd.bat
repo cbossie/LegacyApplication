@@ -5,7 +5,7 @@
 
 docker build -t iis-dotnetframework:build .
 
-docker run -p 8081:80 -v "C:\inetpub\images\:C:\images\"  -t iis-dotnetframework:build
+docker run -p 8081:80 -v "C:\images\:C:\images\"  -t iis-dotnetframework:build
 
 
 

@@ -28,7 +28,7 @@ COPY --from=build /Publish-Legacy .
 
 # Create Virtual Directory and copy data
 RUN mkdir c:\\images
-RUN icacls 'C:\Images\' /grant 'IIS APPPOOL\DefaultAppPool:(W)'
+RUN icacls 'C:\Images\' /grant 'IIS APPPOOL\DefaultAppPool:(F)'
 
 # Enable Failed Request Tracing
 RUN Install-WindowsFeature Web-Http-Tracing
@@ -38,7 +38,7 @@ RUN ["C:\\Windows\\system32\\inetsrv\\appcmd.exe", "set", "config", "-section:sy
 
 
 
-RUN C:\Windows\system32\inetsrv\appcmd.exe add vdir /app.name:'Default Web Site/' /path:/Images /physicalPath:C:\\images
+RUN C:\Windows\system32\inetsrv\appcmd.exe add vdir /app.name:'Default Web Site/' /path:/Images /physicalPath:C:\images
 
 
 

@@ -175,6 +175,7 @@
     </None>
     <None Include="Properties\PublishProfiles\FolderProfile-C.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\InetPub.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Properties\PublishProfiles\FolderProfile.pubxml.user" />
     <Content Include="Scripts\bootstrap.js" />
