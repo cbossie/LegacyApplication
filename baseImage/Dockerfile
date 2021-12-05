@@ -11,6 +11,8 @@ RUN Install-WindowsFeature Web-Http-Tracing
 RUN ["C:\\Windows\\system32\\inetsrv\\appcmd.exe", "set", "config", "-section:system.applicationHost/sites", "/[name='Default Web Site'].traceFailedRequestsLogging.enabled:True", "/commit:apphost"]
 RUN ["C:\\Windows\\system32\\inetsrv\\appcmd.exe", "set", "config", "-section:system.applicationHost/sites", "/[name='Default Web Site'].traceFailedRequestsLogging.maxLogFiles:10", "/commit:apphost"]
 RUN ["C:\\Windows\\system32\\inetsrv\\appcmd.exe", "set", "config", "-section:system.applicationHost/sites", "/[name='Default Web Site'].traceFailedRequestsLogging.directory:C:\\inetpub\\logs\\FailedReqLogFiles\\", "/commit:apphost"]
+
+
 RUN C:\Windows\system32\inetsrv\appcmd.exe add vdir /app.name:'Default Web Site/' /path:/Images /physicalPath:C:\images
 MAINTAINER Craig Bossie <cbbossie@amazon.com>
 
