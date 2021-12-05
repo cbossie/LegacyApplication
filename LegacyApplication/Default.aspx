@@ -5,6 +5,10 @@
         On this page we will deal with some session data.
     </h2>
 
+    <div class="row col-md-12">
+        User: <%= System.Security.Principal.WindowsIdentity.GetCurrent().Name %>
+    </div>
+
     <div class="row">
         <div class="col-md-10">
             <p>
@@ -38,7 +42,15 @@
 
 
     <asp:Button runat="server" ID="btnDivideByZero" CssClass="btn btn-primary" Text="Divide By Zero" OnClick="btnDivideByZero_Click" />
+    <asp:Button runat="server" ID="btnListDirectory" CssClass="btn btn-primary" Text="File Listing" OnClick="btnListDirectory_Click" />
+   <asp:Button runat="server" ID="btnWriteTimestamp" CssClass="btn btn-primary" Text="Write Timestamp" OnClick="btnWriteTimestamp_Click"/>
 
+    <div class="row col-md-12">
+        <label>Directory Listing</label>
+        <asp:Panel runat="server" ID="pnlText">
+        <asp:Literal runat="server" ID="litText"></asp:Literal>
+            </asp:Panel>
+    </div>
 
     <div class="row col-md-12">
 

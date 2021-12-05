@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -66,6 +67,20 @@ namespace LegacyApplication
         {
             var a = 4;
             var b = a / 0;
+        }
+
+        protected void btnListDirectory_Click(object sender, EventArgs e)
+        {
+            var fileList = System.IO.Directory.GetFiles(@"C:\Images");
+            litText.Text = string.Join("<br/>", fileList);
+        }
+
+        protected void btnWriteTimestamp_Click(object sender, EventArgs e)
+        {
+            string timestamp = DateTime.Now.ToString();
+            var data = $"Current Timestamp is {timestamp}";
+            string filename = $@"C:\images\{DateTime.Now.Ticks}";
+            File.WriteAllText(filename, timestamp);
         }
     }
 }

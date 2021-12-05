@@ -12,7 +12,7 @@
           }
         ]
       },
-	  {
+      {
         "type": "EventLog",
         "startAtOldestRecord": true,
         "eventFormatMultiLine": false,
@@ -30,6 +30,11 @@
         "includeSubdirectories": true
       },
       {
+        "type": "File",
+        "directory": "c:\\inetpub\\logs\\FailedReqLogFiles",
+        "includeSubdirectories": true
+      },
+      {
         "type": "ETW",
         "providers": [
           {
@@ -40,7 +45,7 @@
           {
             "providerName": "Microsoft-Windows-IIS-Logging",
             "ProviderGuid ": "7E8AD27F-B271-4EA2-A783-A47BDE29143B",
-            "level": "Information" ,
+            "level": "Information",
             "keywords": "0xFF"
           }
         ]

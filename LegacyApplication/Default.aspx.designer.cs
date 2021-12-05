@@ -69,6 +69,42 @@ namespace LegacyApplication
         protected global::System.Web.UI.WebControls.Button btnDivideByZero;
 
         /// <summary>
+        /// btnListDirectory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnListDirectory;
+
+        /// <summary>
+        /// btnWriteTimestamp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnWriteTimestamp;
+
+        /// <summary>
+        /// pnlText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlText;
+
+        /// <summary>
+        /// litText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litText;
+
+        /// <summary>
         /// pnlAlert control.
         /// </summary>
         /// <remarks>
