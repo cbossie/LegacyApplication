@@ -1,1 +1,0 @@
-ping -t localhost > nul

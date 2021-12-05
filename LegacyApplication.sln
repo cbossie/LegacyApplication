@@ -11,13 +11,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "git", "git", "{3D7D5A06-484
 		deploy-withvd.bat = deploy-withvd.bat
 		deploy.bat = deploy.bat
 		deploy_ec2.bat = deploy_ec2.bat
-		LegacyApplication\LogMonitor\LogMonitorConfig.json = LegacyApplication\LogMonitor\LogMonitorConfig.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{465F23E1-660A-44B2-AE62-C0083AA2336C}"
 	ProjectSection(SolutionItems) = preProject
 		deploy.bat = deploy.bat
 		deploy_ec2.bat = deploy_ec2.bat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BaseImage", "BaseImage", "{B22D9202-FD07-4D9E-BBE1-85AABCD09E45}"
+	ProjectSection(SolutionItems) = preProject
+		baseImage\Dockerfile = baseImage\Dockerfile
+		baseImage\LogMonitor\LogMonitorConfig.json = baseImage\LogMonitor\LogMonitorConfig.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{8230C8C8-8E2A-4179-8D8C-DDCA0B88F588}"
+	ProjectSection(SolutionItems) = preProject
 		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
