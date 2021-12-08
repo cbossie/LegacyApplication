@@ -25,10 +25,11 @@ COPY /rootCA.crt /rootCA.crt
 RUN certutil -addstore "CA" "c:\rootCA.crt"
 RUN certutil -addstore "Root" "c:\rootCA.crt"
 
-
+# Add HTTPS Binding to the Site
 RUN ["C:\\Windows\\system32\\inetsrv\\appcmd.exe", "set", "site", "/site.name:Default Web Site", "/+bindings.[protocol='https',bindingInformation='*:443:']"]
 RUN netsh http add sslcert ipport=0.0.0.0:443 certhash='4e1f0c5dd1fa33820feb92f5de3c0c63847c7e60' appid='{ab3c58f7-8316-42e3-bc6e-771d4ce4b202}'
 
+# Add Virtual directory
 RUN C:\Windows\system32\inetsrv\appcmd.exe add vdir /app.name:'Default Web Site/' /path:/Images /physicalPath:C:\images
 MAINTAINER Craig Bossie <cbbossie@amazon.com>
 
