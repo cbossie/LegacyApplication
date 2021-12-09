@@ -10,7 +10,8 @@ COPY . .
 WORKDIR /bld/LegacyApplication
 
 # Execute Build
-RUN nuget restore c:\bld\LegacyApplication\LegacyApplication.csproj -PackagesDirectory c:\bld\LegacyApplication\packages
+RUN nuget restore c:\bld\LegacyApplication\LegacyApplication.csproj -PackagesDirectory c:\bld\packages
+#RUN msbuild c:\bld\LegacyApplication\LegacyApplication\LegacyApplication.csproj /t:restore
 WORKDIR /bld/LegacyApplication/LegacyApplication
 RUN msbuild c:\bld\LegacyApplication\LegacyApplication.csproj /p:PublishProfile=FolderProfile-C /p:DeployOnBuild=true
 
