@@ -1,6 +1,6 @@
 BASE IMAGE DOCKER BUILD - RUN IN ~/baseImage directory
 
-docker build --build-arg CERTPASS="<password>" -t iis-base-image:prod . 
+cd .. 
 
 
 MAIN DOCKER BUILD - RUN IN solution directory

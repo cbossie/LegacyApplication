@@ -11,11 +11,11 @@ EXPOSE 443
 RUN mkdir c:\\images
 RUN icacls 'C:\Images\' /grant 'IIS APPPOOL\DefaultAppPool:(F)'
 
-# Enable Failed Request Tracing
-RUN Install-WindowsFeature Web-Http-Tracing
-RUN ["C:\\Windows\\system32\\inetsrv\\appcmd.exe", "set", "config", "-section:system.applicationHost/sites", "/[name='Default Web Site'].traceFailedRequestsLogging.enabled:True", "/commit:apphost"]
-RUN ["C:\\Windows\\system32\\inetsrv\\appcmd.exe", "set", "config", "-section:system.applicationHost/sites", "/[name='Default Web Site'].traceFailedRequestsLogging.maxLogFiles:10", "/commit:apphost"]
-RUN ["C:\\Windows\\system32\\inetsrv\\appcmd.exe", "set", "config", "-section:system.applicationHost/sites", "/[name='Default Web Site'].traceFailedRequestsLogging.directory:C:\\inetpub\\logs\\FailedReqLogFiles\\", "/commit:apphost"]
+# Enable Failed Request Tracing If needed
+# RUN Install-WindowsFeature Web-Http-Tracing
+# RUN ["C:\\Windows\\system32\\inetsrv\\appcmd.exe", "set", "config", "-section:system.applicationHost/sites", "/[name='Default Web Site'].traceFailedRequestsLogging.enabled:True", "/commit:apphost"]
+# RUN ["C:\\Windows\\system32\\inetsrv\\appcmd.exe", "set", "config", "-section:system.applicationHost/sites", "/[name='Default Web Site'].traceFailedRequestsLogging.maxLogFiles:10", "/commit:apphost"]
+# RUN ["C:\\Windows\\system32\\inetsrv\\appcmd.exe", "set", "config", "-section:system.applicationHost/sites", "/[name='Default Web Site'].traceFailedRequestsLogging.directory:C:\\inetpub\\logs\\FailedReqLogFiles\\", "/commit:apphost"]
 
 # Import SSL
 WORKDIR /

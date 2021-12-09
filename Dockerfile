@@ -7,22 +7,17 @@ WORKDIR /bld
 
 # Copy Source to Build Container
 COPY . .
-
-
 WORKDIR /bld/LegacyApplication
 
-RUN msbuild c:\bld\LegacyApplication.sln /t:Restore
-
 # Execute Build
-RUN msbuild c:\bld\LegacyApplication\LegacyApplication.csproj /p:PublishProfile=FolderProfile-C /p:DeployOnBuild=true 
-
-
+RUN nuget restore c:\bld\LegacyApplication\LegacyApplication.csproj -PackagesDirectory c:\bld\LegacyApplication\packages
+WORKDIR /bld/LegacyApplication/LegacyApplication
+RUN msbuild c:\bld\LegacyApplication\LegacyApplication.csproj /p:PublishProfile=FolderProfile-C /p:DeployOnBuild=true
 
 # Copy from builder container to runner
 FROM iis-base-image:prod
 WORKDIR /inetpub/wwwroot
 COPY --from=build /Publish-Legacy .
-
 
 
 
